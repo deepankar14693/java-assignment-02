@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>TwitterImplementation.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">java-assignment-02</a> &gt; <a href="index.source.html" class="el_package">edu.knoldus.TwitterApi</a> &gt; <span class="el_source">TwitterImplementation.java</span></div><h1>TwitterImplementation.java</h1><pre class="source lang-java linenums">package edu.knoldus.TwitterApi;
+
+import twitter4j.Status;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+
+/**
+ * implementing twitter operations and analytics.
+ */
+<span class="nc" id="L12"> class TwitterImplementation {</span>
+  /**
+   * main method starts.
+   * @param args array of string
+   * @throws InterruptedException thrown by twitter object
+   */
+  public static void main(final String[] args)
+      throws InterruptedException {
+<span class="nc" id="L20">    TwitterApplication tweets = new TwitterApplication();</span>
+<span class="nc" id="L21">    TwitterOperations tweetOperations = new TwitterOperations();</span>
+<span class="nc" id="L22">    int time = 10000;</span>
+
+<span class="nc" id="L24">    List&lt;Status&gt; useTweets = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L25">    CompletableFuture&lt;List&lt;Status&gt;&gt; fetchedTweets = tweets</span>
+<span class="nc" id="L26">        .fetchTweets(&quot;#KatrinaKaif&quot;, tweetOperations.twitter);</span>
+<span class="nc" id="L27">    fetchedTweets.thenAccept(x -&gt; x.forEach(System.out::println));</span>
+
+
+    //fetchedTweets.thenApply (x -&gt; x.stream ().map (useTweets::add));
+    //System.out.println (useTweets.size ());
+<span class="nc" id="L32">    CompletableFuture&lt;Integer&gt; tweetCount = tweets.countTweets(</span>
+        &quot;#KatrinaKaif&quot;, tweetOperations.twitter);
+<span class="nc" id="L34">    tweetCount.thenAccept(x -&gt; System.out.println(</span>
+        &quot;Number of tweets are : &quot; + x));
+    //System.out.println (&quot;Number of tweets are : &quot;+tweetCount);
+
+<span class="nc" id="L38">    CompletableFuture&lt;Double&gt; averageTweetCount = tweets</span>
+<span class="nc" id="L39">        .findAverageTweetsPerDay(tweetOperations.twitter);</span>
+<span class="nc" id="L40">    averageTweetCount.thenAccept(x -&gt; System.out.println(</span>
+        &quot;average Number of tweets are : &quot; + x));
+
+<span class="nc" id="L43">    CompletableFuture&lt;Double&gt; averageLikes = tweets</span>
+<span class="nc" id="L44">        .getAverageNumOfLikes (tweetOperations.twitter,&quot;#KatrinaKaif&quot;);</span>
+<span class="nc" id="L45">    averageLikes.thenAccept (x -&gt; System.out.println(</span>
+        &quot;average Number of likes are : &quot; + x));
+
+<span class="nc" id="L48">    CompletableFuture&lt;Double&gt; averageRetweets = tweets</span>
+<span class="nc" id="L49">        .getAverageReTweets (tweetOperations.twitter,&quot;#KatrinaKaif&quot;);</span>
+<span class="nc" id="L50">    averageRetweets.thenAccept (x -&gt; System.out.println(</span>
+        &quot;average Number of retweets are : &quot; + x));
+
+
+<span class="nc" id="L54">    Thread.sleep(time);</span>
+<span class="nc" id="L55">  }</span>
+
+}
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

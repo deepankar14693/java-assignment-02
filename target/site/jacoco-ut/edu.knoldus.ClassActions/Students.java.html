@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Students.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">java-assignment-02</a> &gt; <a href="index.source.html" class="el_package">edu.knoldus.ClassActions</a> &gt; <span class="el_source">Students.java</span></div><h1>Students.java</h1><pre class="source lang-java linenums">package edu.knoldus.ClassActions;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
+public class Students {
+  private String name;
+  private int rollNumber;
+  private Optional&lt;List&lt;String&gt;&gt; subjects;
+
+  public Students(String name, int rollNumber
+<span class="fc" id="L14">      , Optional&lt;List&lt;String&gt;&gt; subjects) {</span>
+<span class="fc" id="L15">    this.name = name;</span>
+<span class="fc" id="L16">    this.rollNumber = rollNumber;</span>
+<span class="fc" id="L17">    this.subjects = subjects;</span>
+<span class="fc" id="L18">  }</span>
+
+  public static void main(String[] args) {
+<span class="nc" id="L21">    ArrayList&lt;String&gt; studentsWithoutSubjects = new ArrayList&lt;String&gt;();</span>
+<span class="nc" id="L22">    Students s1 = new Students(&quot;deepankar&quot;, 4,</span>
+<span class="nc" id="L23">        Optional.of(Arrays.asList(&quot;maths&quot;, &quot;eng&quot;, &quot;science&quot;)));</span>
+<span class="nc" id="L24">    Students s2 = new Students(&quot;ankit&quot;, 2,</span>
+<span class="nc" id="L25">        Optional.of(Arrays.asList(&quot;maths&quot;, &quot;eng&quot;, &quot;science&quot;)));</span>
+<span class="nc" id="L26">    Students s3 = new Students(&quot;amit&quot;, 1,</span>
+<span class="nc" id="L27">        Optional.of(Arrays.asList(&quot;maths&quot;, &quot;eng&quot;, &quot;science&quot;)));</span>
+<span class="nc" id="L28">    Students s4 = new Students(&quot;nitin&quot;, 10,</span>
+<span class="nc" id="L29">        Optional.of(Arrays.asList(&quot;maths&quot;, &quot;eng&quot;, &quot;science&quot;)));</span>
+<span class="nc" id="L30">    Students s5 = new Students(&quot;deepak&quot;, 3,</span>
+<span class="nc" id="L31">        Optional.of(Arrays.asList(&quot;maths&quot;, &quot;eng&quot;, &quot;science&quot;)));</span>
+<span class="nc" id="L32">    Students s6 = new Students(&quot;harish&quot;, 15,</span>
+<span class="nc" id="L33">        Optional.empty());</span>
+<span class="nc" id="L34">    Students s7 = new Students(&quot;rohit&quot;, 20,</span>
+<span class="nc" id="L35">        Optional.empty());</span>
+
+<span class="nc" id="L37">    ClassRooms room1 = new ClassRooms(1,</span>
+<span class="nc" id="L38">        Optional.of(Arrays.asList(s1, s2, s3, s6, s7)));</span>
+<span class="nc" id="L39">    ClassRooms room2 = new ClassRooms(2,</span>
+<span class="nc" id="L40">        Optional.of(Arrays.asList(s6, s7)));</span>
+<span class="nc" id="L41">    ClassRooms room3 = new ClassRooms(3,</span>
+<span class="nc" id="L42">        Optional.empty());</span>
+
+<span class="nc" id="L44">    studentsWithoutSubjects = getStudentsWithNoSubject(room1);</span>
+<span class="nc" id="L45">    System.out.println(studentsWithoutSubjects);</span>
+<span class="nc" id="L46">    String hello = helloStudents(room3);</span>
+<span class="nc" id="L47">    System.out.println(hello);</span>
+<span class="nc" id="L48">  }</span>
+
+  /**
+   * @param room1 object of class room
+   * @return list of student names who don;t have any subjects
+   */
+  public static ArrayList&lt;String&gt; getStudentsWithNoSubject(ClassRooms room1) {
+<span class="fc" id="L55">    ArrayList&lt;String&gt; classStudents = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L56">    room1.students.orElseGet(ArrayList::new).stream().filter(</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        students -&gt; !(students.subjects.isPresent())).forEach((Students student) -&gt; {</span>
+<span class="fc" id="L58">      classStudents.add(student.name);</span>
+<span class="fc" id="L59">    });</span>
+<span class="fc" id="L60">    return classStudents;</span>
+  }
+
+  /*public static ArrayList&lt;String&gt; getSubjectsFromRoom(List&lt;ClassRooms&gt; objects, int roomNumber) {
+    ArrayList&lt;String&gt; getSubjects = new ArrayList&lt;&gt; ();
+    objects.stream ().filter (rooms -&gt; rooms.roomId == roomNumber)
+        .map (room -&gt; room.students.orElseGet (ArrayList::new))
+        .map (student -&gt; student.stream ().forEach (x -&gt; {
+          if (x.subjects.isPresent ()){
+            x.subjects.orElseGet (ArrayList::new).stream ().forEach (y -&gt; getSubjects.add (y));
+          }
+        }));
+    return getSubjects;
+  }*/
+
+  /**
+   *
+   * @param room object of classroom
+   * @return hello students if students are presnt in class else returns null
+   */
+  public static String helloStudents(ClassRooms room) {
+<span class="pc bpc" id="L81" title="1 of 2 branches missed.">    if (room.students.isPresent()) {</span>
+<span class="fc" id="L82">      return &quot;hello students&quot;;</span>
+    } else {
+<span class="nc" id="L84">      return &quot;null&quot;;</span>
+    }
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

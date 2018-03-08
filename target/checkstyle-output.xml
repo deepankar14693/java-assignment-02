@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.11.2">
+<file name="/home/knoldus/IdeaProjects/javaassignment02/src/main/java/edu/knoldus/ClassActions/ClassRooms.java">
+<error line="1" column="9" severity="warning" message="Package name &apos;edu.knoldus.ClassActions&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="26" column="13" severity="warning" message="&apos;,&apos; should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.SeparatorWrapCheck"/>
+</file>
+<file name="/home/knoldus/IdeaProjects/javaassignment02/src/main/java/edu/knoldus/ClassActions/Students.java">
+<error line="1" column="9" severity="warning" message="Package name &apos;edu.knoldus.ClassActions&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="14" column="13" severity="warning" message="&apos;,&apos; should be on the previous line." source="com.puppycrawl.tools.checkstyle.checks.whitespace.SeparatorWrapCheck"/>
+<error line="21" column="75" severity="warning" message="&apos;(&apos; is preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.MethodParamPadCheck"/>
+<error line="26" column="36" severity="warning" message="&apos;(&apos; is preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.MethodParamPadCheck"/>
+<error line="50" severity="warning" message="First sentence of Javadoc is incomplete (period is missing) or not present." source="com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"/>
+<error line="58" severity="warning" message="&apos;block&apos; child have incorrect indentation level 12, expected level should be 20." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="58" severity="warning" message="&apos;method call&apos; child have incorrect indentation level 12, expected level should be 20." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="59" severity="warning" message="&apos;block rcurly&apos; have incorrect indentation level 8, expected level should be 16." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="63" severity="warning" message="Block comment has incorrect indentation level 2, expected is 4, indentation should be the same level as line 75." source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="75" severity="warning" message="First sentence of Javadoc is incomplete (period is missing) or not present." source="com.puppycrawl.tools.checkstyle.checks.javadoc.SummaryJavadocCheck"/>
+</file>
+<file name="/home/knoldus/IdeaProjects/javaassignment02/src/main/java/edu/knoldus/ClassActions/package-info.java">
+<error line="4" column="9" severity="warning" message="Package name &apos;edu.knoldus.ClassActions&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+</file>
+<file name="/home/knoldus/IdeaProjects/javaassignment02/src/main/java/edu/knoldus/TwitterApi/TwitterOperations.java">
+<error line="1" column="9" severity="warning" message="Package name &apos;edu.knoldus.TwitterApi&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+</file>
+<file name="/home/knoldus/IdeaProjects/javaassignment02/src/main/java/edu/knoldus/TwitterApi/TwitterImplementation.java">
+<error line="1" column="9" severity="warning" message="Package name &apos;edu.knoldus.TwitterApi&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="23" severity="warning" message="Distance between variable &apos;time&apos; declaration and its first usage is 6, but allowed 3.  Consider to make that variable as final if you still need to store its value in advance (before method calls that might do side effect on original value)." source="com.puppycrawl.tools.checkstyle.checks.coding.VariableDeclarationUsageDistanceCheck"/>
+<error line="35" column="55" severity="warning" message="&apos;(&apos; is preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.MethodParamPadCheck"/>
+</file>
+<file name="/home/knoldus/IdeaProjects/javaassignment02/src/main/java/edu/knoldus/TwitterApi/TwitterApplication.java">
+<error line="1" column="9" severity="warning" message="Package name &apos;edu.knoldus.TwitterApi&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="17" column="16" severity="warning" message="Member name &apos;ConvertToDay&apos; must match pattern &apos;^[a-z][a-z0-9][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
+<error line="20" severity="warning" message="&apos;fetchTweets&apos; have incorrect indentation level 4, expected level should be 12." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="27" column="28" severity="warning" message="WhitespaceAround: &apos;catch&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="36" severity="warning" message="&apos;countTweets&apos; have incorrect indentation level 4, expected level should be 12." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="42" column="28" severity="warning" message="WhitespaceAround: &apos;catch&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="51" severity="warning" message="&apos;findAverageTweetsPerDay&apos; have incorrect indentation level 4, expected level should be 12." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="59" column="84" severity="warning" message="&apos;(&apos; is preceded with whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.MethodParamPadCheck"/>
+<error line="61" column="28" severity="warning" message="WhitespaceAround: &apos;catch&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="70" severity="warning" message="&apos;getAverageNumOfLikes&apos; have incorrect indentation level 4, expected level should be 12." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="80" column="20" severity="warning" message="WhitespaceAround: &apos;catch&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+<error line="88" severity="warning" message="Comment has incorrect indentation level 0, expected is 4, indentation should be the same level as line 90." source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="91" severity="warning" message="&apos;getAverageReTweets&apos; have incorrect indentation level 4, expected level should be 12." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="101" column="20" severity="warning" message="WhitespaceAround: &apos;catch&apos; is not followed by whitespace. Empty blocks may only be represented as {} when not part of a multi-block statement (4.1.3)" source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck"/>
+</file>
+<file name="/home/knoldus/IdeaProjects/javaassignment02/src/main/java/edu/knoldus/TwitterApi/package-info.java">
+<error line="4" column="9" severity="warning" message="Package name &apos;edu.knoldus.TwitterApi&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+</file>
+<file name="/home/knoldus/IdeaProjects/javaassignment02/src/main/java/edu/knoldus/package-info.java">
+</file>
+</checkstyle>
